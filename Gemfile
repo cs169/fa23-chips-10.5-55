@@ -44,6 +44,7 @@ gem 'rubyzip'
 gem 'date_validator'
 
 group :development, :test do
+  gem 'webmock'
   gem 'axe-core-cucumber'
   gem 'axe-core-rspec'
   gem 'cucumber-rails', require: false

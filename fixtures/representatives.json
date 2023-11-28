@@ -1,0 +1,824 @@
+{
+  "normalizedInput": {
+    "line1": "4014 Ashby Lane",
+    "city": "Indian Land",
+    "state": "SC",
+    "zip": "29707"
+  },
+  "kind": "civicinfo#representativeInfoResponse",
+  "divisions": {
+    "ocd-division/country:us/state:sc/sldu:16": {
+      "name": "South Carolina State Senate district 16",
+      "officeIndices": [
+        12
+      ]
+    },
+    "ocd-division/country:us/state:sc": {
+      "name": "South Carolina",
+      "officeIndices": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "ocd-division/country:us": {
+      "name": "United States",
+      "officeIndices": [
+        0,
+        1
+      ]
+    },
+    "ocd-division/country:us/state:sc/sldl:44": {
+      "name": "South Carolina State House district HD-044",
+      "officeIndices": [
+        13
+      ]
+    },
+    "ocd-division/country:us/state:sc/cd:5": {
+      "name": "South Carolina's 5th congressional district",
+      "officeIndices": [
+        3
+      ]
+    },
+    "ocd-division/country:us/state:sc/county:lancaster": {
+      "name": "Lancaster County",
+      "officeIndices": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "ocd-division/country:us/state:sc/county:lancaster/council_district:7": {
+      "name": "Lancaster Council District 7",
+      "officeIndices": [
+        19
+      ]
+    }
+  },
+  "offices": [
+    {
+      "name": "President of the United States",
+      "divisionId": "ocd-division/country:us",
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "headOfGovernment",
+        "headOfState"
+      ],
+      "officialIndices": [
+        0
+      ]
+    },
+    {
+      "name": "Vice President of the United States",
+      "divisionId": "ocd-division/country:us",
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "deputyHeadOfGovernment"
+      ],
+      "officialIndices": [
+        1
+      ]
+    },
+    {
+      "name": "U.S. Senator",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "legislatorUpperBody"
+      ],
+      "officialIndices": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "U.S. Representative",
+      "divisionId": "ocd-division/country:us/state:sc/cd:5",
+      "levels": [
+        "country"
+      ],
+      "roles": [
+        "legislatorLowerBody"
+      ],
+      "officialIndices": [
+        4
+      ]
+    },
+    {
+      "name": "Governor of South Carolina",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "headOfGovernment"
+      ],
+      "officialIndices": [
+        5
+      ]
+    },
+    {
+      "name": "Lieutenant Governor of South Carolina",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "deputyHeadOfGovernment"
+      ],
+      "officialIndices": [
+        6
+      ]
+    },
+    {
+      "name": "SC State Commissioner of Agriculture",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        7
+      ]
+    },
+    {
+      "name": "SC Secretary of State",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        8
+      ]
+    },
+    {
+      "name": "SC State Treasurer",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        9
+      ]
+    },
+    {
+      "name": "SC State Superintendent of Education",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        10
+      ]
+    },
+    {
+      "name": "SC State Attorney General",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        11
+      ]
+    },
+    {
+      "name": "SC State Comptroller",
+      "divisionId": "ocd-division/country:us/state:sc",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        12
+      ]
+    },
+    {
+      "name": "SC State Senator",
+      "divisionId": "ocd-division/country:us/state:sc/sldu:16",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "legislatorUpperBody"
+      ],
+      "officialIndices": [
+        13
+      ]
+    },
+    {
+      "name": "SC State Representative",
+      "divisionId": "ocd-division/country:us/state:sc/sldl:44",
+      "levels": [
+        "administrativeArea1"
+      ],
+      "roles": [
+        "legislatorLowerBody"
+      ],
+      "officialIndices": [
+        14
+      ]
+    },
+    {
+      "name": "Lancaster County Treasurer",
+      "divisionId": "ocd-division/country:us/state:sc/county:lancaster",
+      "levels": [
+        "administrativeArea2"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        15
+      ]
+    },
+    {
+      "name": "Lancaster County Coroner",
+      "divisionId": "ocd-division/country:us/state:sc/county:lancaster",
+      "levels": [
+        "administrativeArea2"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        16
+      ]
+    },
+    {
+      "name": "Lancaster County Sheriff",
+      "divisionId": "ocd-division/country:us/state:sc/county:lancaster",
+      "levels": [
+        "administrativeArea2"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        17
+      ]
+    },
+    {
+      "name": "Lancaster County Auditor",
+      "divisionId": "ocd-division/country:us/state:sc/county:lancaster",
+      "levels": [
+        "administrativeArea2"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        18
+      ]
+    },
+    {
+      "name": "Lancaster County Clerk of Court",
+      "divisionId": "ocd-division/country:us/state:sc/county:lancaster",
+      "levels": [
+        "administrativeArea2"
+      ],
+      "roles": [
+        "governmentOfficer"
+      ],
+      "officialIndices": [
+        19
+      ]
+    },
+    {
+      "name": "Lancaster County Council Member",
+      "divisionId": "ocd-division/country:us/state:sc/county:lancaster/council_district:7",
+      "levels": [
+        "administrativeArea2"
+      ],
+      "roles": [
+        "legislatorLowerBody"
+      ],
+      "officialIndices": [
+        20
+      ]
+    }
+  ],
+  "officials": [
+    {
+      "name": "Joseph R. Biden",
+      "address": [
+        {
+          "line1": "1600 Pennsylvania Avenue Northwest",
+          "city": "Washington",
+          "state": "DC",
+          "zip": "20500"
+        }
+      ],
+      "party": "Democratic Party",
+      "phones": [
+        "(202) 456-1111"
+      ],
+      "urls": [
+        "https://www.whitehouse.gov/",
+        "https://en.wikipedia.org/wiki/Joe_Biden"
+      ],
+      "channels": [
+        {
+          "type": "Twitter",
+          "id": "potus"
+        }
+      ]
+    },
+    {
+      "name": "Kamala D. Harris",
+      "address": [
+        {
+          "line1": "1600 Pennsylvania Avenue Northwest",
+          "city": "Washington",
+          "state": "DC",
+          "zip": "20500"
+        }
+      ],
+      "party": "Democratic Party",
+      "phones": [
+        "(202) 456-1111"
+      ],
+      "urls": [
+        "https://www.whitehouse.gov/",
+        "https://en.wikipedia.org/wiki/Kamala_Harris"
+      ],
+      "channels": [
+        {
+          "type": "Twitter",
+          "id": "VP"
+        }
+      ]
+    },
+    {
+      "name": "Lindsey Graham",
+      "address": [
+        {
+          "line1": "290 Russell Senate Office Building",
+          "city": "Washington",
+          "state": "DC",
+          "zip": "20510"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(202) 224-5972"
+      ],
+      "urls": [
+        "https://www.lgraham.senate.gov/",
+        "https://en.wikipedia.org/wiki/Lindsey_Graham"
+      ],
+      "photoUrl": "http://bioguide.congress.gov/bioguide/photo/G/G000359.jpg",
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "USSenatorLindseyGraham"
+        },
+        {
+          "type": "Twitter",
+          "id": "LindseyGrahamSC"
+        }
+      ]
+    },
+    {
+      "name": "Tim Scott",
+      "address": [
+        {
+          "line1": "104 Hart Senate Office Building",
+          "city": "Washington",
+          "state": "DC",
+          "zip": "20510"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(202) 224-6121"
+      ],
+      "urls": [
+        "https://www.scott.senate.gov/",
+        "https://en.wikipedia.org/wiki/Tim_Scott"
+      ],
+      "photoUrl": "http://bioguide.congress.gov/bioguide/photo/S/S001184.jpg",
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "SenatorTimScott"
+        },
+        {
+          "type": "Twitter",
+          "id": "SenatorTimScott"
+        }
+      ]
+    },
+    {
+      "name": "Ralph Norman",
+      "address": [
+        {
+          "line1": "569",
+          "line2": "27 Independence Avenue Southeast",
+          "city": "Washington",
+          "state": "DC",
+          "zip": "20515"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(202) 225-5501"
+      ],
+      "urls": [
+        "https://norman.house.gov/",
+        "https://en.wikipedia.org/wiki/Ralph_Norman"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "RepRalphNorman"
+        },
+        {
+          "type": "Twitter",
+          "id": "RepRalphNorman"
+        }
+      ]
+    },
+    {
+      "name": "Henry McMaster",
+      "address": [
+        {
+          "line1": "1100 Gervais Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-2100"
+      ],
+      "urls": [
+        "https://governor.sc.gov/",
+        "https://en.wikipedia.org/wiki/Henry_McMaster"
+      ],
+      "photoUrl": "http://governor.sc.gov/Style%20Library/Images/newsImage.jpg",
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "HenryMcMaster"
+        },
+        {
+          "type": "Twitter",
+          "id": "henrymcmaster"
+        }
+      ]
+    },
+    {
+      "name": "Pamela Evette",
+      "address": [
+        {
+          "line1": "1100 Gervais Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-2100"
+      ],
+      "urls": [
+        "https://governor.sc.gov/lieutenant-governor",
+        "https://en.wikipedia.org/wiki/Pamela_Evette"
+      ]
+    },
+    {
+      "name": "Hugh E. Weathers",
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-2190"
+      ],
+      "urls": [
+        "https://agriculture.sc.gov/",
+        "https://en.wikipedia.org/wiki/Hugh_Weathers"
+      ],
+      "emails": [
+        "hweathe@scda.sc.gov"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "SCDAgriculture"
+        },
+        {
+          "type": "Twitter",
+          "id": "SCDAgriculture"
+        }
+      ]
+    },
+    {
+      "name": "Mark Hammond",
+      "address": [
+        {
+          "line1": "1205 Pendleton Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-2170"
+      ],
+      "urls": [
+        "https://sos.sc.gov/",
+        "https://en.wikipedia.org/wiki/Mark_Hammond_%28American_politician%29"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "SecretaryOfStateMarkHammond"
+        }
+      ]
+    },
+    {
+      "name": "Curtis M. Loftis, Jr.",
+      "address": [
+        {
+          "line1": "1200 Senate Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-2101"
+      ],
+      "urls": [
+        "https://treasurer.sc.gov/",
+        "https://en.wikipedia.org/wiki/Curtis_Loftis"
+      ],
+      "emails": [
+        "treasurer@sto.sc.gov"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "SCStateTreasurer"
+        },
+        {
+          "type": "Twitter",
+          "id": "treasurerloftis"
+        }
+      ]
+    },
+    {
+      "name": "Ellen Weaver",
+      "address": [
+        {
+          "line1": "1429 Senate Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-8500"
+      ],
+      "urls": [
+        "https://ed.sc.gov/",
+        "https://en.wikipedia.org/wiki/Ellen_Weaver"
+      ],
+      "emails": [
+        "superintendent@ed.sc.gov"
+      ]
+    },
+    {
+      "name": "Alan Wilson",
+      "party": "Republican Party",
+      "phones": [
+        "(803) 734-3970"
+      ],
+      "urls": [
+        "https://www.scag.gov/",
+        "https://en.wikipedia.org/wiki/Alan_Wilson_%28South_Carolina_politician%29"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "SCAttyGen"
+        },
+        {
+          "type": "Twitter",
+          "id": "SCAttyGenOffice"
+        }
+      ]
+    },
+    {
+      "name": "Brian J. Gaines",
+      "address": [
+        {
+          "line1": "1200 Senate St",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Unaffiliated",
+      "phones": [
+        "(803) 734-2121"
+      ],
+      "urls": [
+        "https://cg.sc.gov/",
+        "https://en.wikipedia.org/wiki/Brian_J._Gaines"
+      ],
+      "emails": [
+        "cgoffice@cg.sc.gov"
+      ]
+    },
+    {
+      "name": "Michael Johnson",
+      "address": [
+        {
+          "line1": "602",
+          "line2": "1101 Pendleton Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 212-6008"
+      ],
+      "urls": [
+        "https://www.scstatehouse.gov/member.php?code=0949431704"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "michaeljohnsonforsenate"
+        }
+      ]
+    },
+    {
+      "name": "James M. \"Mike\" Neese",
+      "address": [
+        {
+          "line1": "404A",
+          "line2": "1105 Pendleton Street",
+          "city": "Columbia",
+          "state": "SC",
+          "zip": "29201"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 212-6937"
+      ],
+      "urls": [
+        "https://www.scstatehouse.gov/member.php?code=1403977105"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "mikeneesesc"
+        }
+      ]
+    },
+    {
+      "name": "Carrie Helms",
+      "address": [
+        {
+          "line1": "101 North Main Street",
+          "city": "Lancaster",
+          "state": "SC",
+          "zip": "29720"
+        }
+      ],
+      "party": "Republican Party",
+      "phones": [
+        "(803) 285-7939"
+      ],
+      "urls": [
+        "https://www.mylancastersc.org/departments/departments__p_to_z/treasurer.php"
+      ],
+      "emails": [
+        "treasurer@lancastersc.net"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "207027316071506"
+        }
+      ]
+    },
+    {
+      "name": "Karla Knight Deese",
+      "party": "Republican Party",
+      "phones": [
+        "(803) 416-9909"
+      ],
+      "urls": [
+        "https://www.mylancastersc.org/departments/departments__a_to_d/coroner.php"
+      ]
+    },
+    {
+      "name": "Barry Faile",
+      "party": "Republican Party",
+      "phones": [
+        "(803) 283-3388"
+      ],
+      "urls": [
+        "https://www.lacoso.net/"
+      ],
+      "emails": [
+        "sherifffaile@lacoso.net"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "Lancaster-County-Sheriffs-Office-SC-235449113168878"
+        },
+        {
+          "type": "Twitter",
+          "id": "LACOSO1"
+        }
+      ]
+    },
+    {
+      "name": "Suzette Murphy",
+      "party": "Republican Party",
+      "phones": [
+        "(803) 285-7424"
+      ],
+      "urls": [
+        "https://www.mylancastersc.org/departments/departments__a_to_d/auditor/index.php"
+      ],
+      "emails": [
+        "auditor@lancastersc.net"
+      ]
+    },
+    {
+      "name": "Jeff Hammond",
+      "address": [
+        {
+          "line1": "104 North Main Street",
+          "city": "Lancaster",
+          "state": "SC",
+          "zip": "29720"
+        }
+      ],
+      "party": "Democratic Party",
+      "phones": [
+        "(803) 285-1581"
+      ],
+      "urls": [
+        "https://www.mylancastersc.org/departments/departments__a_to_d/clerk_of_court/index.php"
+      ],
+      "emails": [
+        "jhammond@lancastercountysc.net"
+      ]
+    },
+    {
+      "name": "Brian Carnes",
+      "party": "Republican Party",
+      "phones": [
+        "(803) 285-3361"
+      ],
+      "urls": [
+        "https://www.mylancastersc.org/government/lancaster_county_council/index.php"
+      ],
+      "emails": [
+        "briancarnes@lancastercountysc.net"
+      ]
+    }
+  ]
+}

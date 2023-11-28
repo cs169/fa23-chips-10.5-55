@@ -4,6 +4,7 @@
 
 require 'simplecov'
 SimpleCov.start 'rails'
+require 'webmock/rspec'
 
 if ENV['CI']
   require 'codecov'
