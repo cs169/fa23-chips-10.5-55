@@ -16,7 +16,7 @@ class Representative < ApplicationRecord
           ocdid_temp = office.division_id
         end
       end
-      existing = Representative.find_by({name: official.name})
+      existing = Representative.find_by({ name: official.name })
       if existing.nil?
         rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
           title: title_temp })
