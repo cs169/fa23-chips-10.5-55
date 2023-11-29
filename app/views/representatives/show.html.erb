@@ -1,1 +1,14 @@
-<h1><%= @rep.name %></h1>
+<h1><%= @representative.name %></h1>
+<% if @representative.photo_url.present? %>
+  <img src="<%= @representative.photo_url %>" alt="Photo of <%= @representative.name %>">
+<% else %>
+  <p>Photo unavailable</p>
+<% end %>
+<p>Title:<%= @representative.title %></p>
+<p>OCID:<%= @representative.ocdid %></p>
+<p>Address:<%= @representative.line1 %></p>
+<p><%= @representative.city %></p>
+<p><%= @representative.state %></p>
+<p><%= @representative.zip %></p>
+<p>Party:<%= @representative.party %></p>
+
