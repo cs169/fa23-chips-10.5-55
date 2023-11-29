@@ -44,3 +44,6 @@
                                     = link_to representative_news_item_path(item.representative.id, item.id),
                                     method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' do
                                         %i.fas.fa-trash &nbsp;Delete
+                                %td
+                                    = link_to representative_path(item.representative.id, item.representative.name), class: 'btn btn-primary' do
+                                        %i.fas.user &nbsp;Representative Profile 
