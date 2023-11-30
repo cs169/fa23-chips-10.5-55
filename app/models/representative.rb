@@ -28,7 +28,7 @@ class Representative < ApplicationRecord
         "state": official.address&.first&.state,
         "zip": official.address&.first&.zip,
         party: official.party,
-        photo_url: official.photoUrl,
+        photo_url: official.photo_url,
       }
       existing = Representative.find_by({ name: official.name })
       if existing.nil?
