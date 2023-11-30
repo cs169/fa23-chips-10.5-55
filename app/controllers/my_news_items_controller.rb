@@ -56,4 +56,8 @@ class MyNewsItemsController < SessionController
   def news_item_params
     params.require(:news_item).permit(:news, :title, :description, :link, :representative_id)
   end
+
+  def set_issue
+    @issue = params[:new_item][:issue]
+  end
 end
