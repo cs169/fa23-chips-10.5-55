@@ -4,11 +4,8 @@
 <% else %>
   <p>Photo unavailable</p>
 <% end %>
-<p>Title:<%= @representative.title %></p>
-<p>OCDID:<%= @representative.ocdid %></p>
-<p>Address:<%= @representative.line1 %></p>
-<p><%= @representative.city %></p>
-<p><%= @representative.state %></p>
-<p><%= @representative.zip %></p>
-<p>Party:<%= @representative.party %></p>
+<p><strong>Title: </strong><%= @representative.title %></p>
+<p><strong>OCDID: </strong><%= @representative.ocdid %></p>
+<p><strong>Address: </strong><%= @representative.line1 %>, <%= @representative.city %>, <%= @representative.state %> <%= @representative.zip %></p>
+<p><strong>Party: </strong><%= @representative.party %></p>
 
