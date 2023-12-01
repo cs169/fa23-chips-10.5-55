@@ -4,6 +4,10 @@
     Representative: #{@selected_representative ? @selected_representative.name : 'No rep found'}
 %p
 
+%p
+    Issue: #{@selected_issue || 'No Issue found'}
+%p
+
 = form_tag create_from_selected_my_news_item_path, method: :post do
     .table-responsive-md
         %table.table.table-striped.table-hover
@@ -29,6 +33,8 @@
         Rating:
         = select_tag :rating, options_for_select(1..5)
     = hidden_field_tag :representative_id, @selected_representative.id
+    = hidden_field_tag :selected_issue, @selected_issue
+
     .form-group.row
         .col-sm-12.text-center
             = submit_tag 'Save', class: 'btn btn-primary'

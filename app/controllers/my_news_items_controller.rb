@@ -5,6 +5,7 @@ class MyNewsItemsController < SessionController
   before_action :set_representatives_list
   before_action :set_news_item, only: %i[edit update destroy]
   before_action :find_articles, only: [:display_articles]
+  before_action :set_issues_list
 
   def new
     @news_item = NewsItem.new
@@ -38,8 +39,11 @@ class MyNewsItemsController < SessionController
       title:             selected_article['title'],
       description:       selected_article['description'],
       link:              selected_article['link'],
-      representative_id: params[:representative_id]
+      representative_id: params[:representative_id],
+      issue:             params[:selected_issue]
     )
+    Rails.logger.info(params)
+
     if @news_item.save
       redirect_to representative_news_item_path(@representative, @news_item),
                   notice: 'News item was successfully created.'
@@ -75,6 +79,14 @@ class MyNewsItemsController < SessionController
     @representatives_list = Representative.all.map { |r| [r.name, r.id] }
   end
 
+  def set_issues_list
+    @issues_list = ['Free Speech', 'Immigration', 'Terrorism', 'Social Security and
+    Medicare', 'Abortion', 'Student Loans', 'Gun Control', 'Unemployment',
+    'Climate Change', 'Homelessness', 'Racism', 'Tax Reform', 
+    'Net Neutrality', 'Religious Freedom', 'Border Security', 'Minimum Wage',
+    'Equal Pay']
+  end
+
   def set_news_item
     @news_item = NewsItem.find(params[:id])
   end
@@ -91,9 +103,11 @@ class MyNewsItemsController < SessionController
   def find_articles
     @selected_representative_id = news_item_params[:representative_id]
     @selected_representative = Representative.find(@selected_representative_id)
+    name = @selected_representative.name
     @selected_issue = news_item_params[:issue]
+    issue = @selected_issue
     api_key = Rails.application.credentials.NEWS_API_KEY
-    api_query = @selected_representative.name
+    api_query = "#{name} #{issue}"
     base_url = 'https://newsapi.org/v2'
     endpoint = '/everything'
     api_params = {
@@ -102,7 +116,7 @@ class MyNewsItemsController < SessionController
     }
 
     response = RestClient.get("#{base_url}#{endpoint}", params: api_params)
-    Rails.logger.info("API Response: #{response}")
+    Rails.logger.info("Issue: #{issue}")
 
     @api_articles = JSON.parse(response.body)['articles'].first(5)
   end
