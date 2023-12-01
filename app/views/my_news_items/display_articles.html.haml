@@ -4,16 +4,33 @@
     Representative: #{@selected_representative ? @selected_representative.name : 'No rep found'}
 %p
 
-= form_tag display_articles_my_news_item_path, method: :post do
+= form_tag create_from_selected_my_news_item_path, method: :post do
+    .table-responsive-md
+        %table.table.table-striped.table-hover
+            %caption Table of Top 5 News Items
+            %thead.thead-dark
+                %tr
+                    %th select
+                    %th Title
+                    %th Description
+                    %th Link
+            %tbody
+                - @api_articles.each_with_index do |article, index|
+                    %tr
+                        %td
+                            %input{ type: 'radio', name: 'selected_article_index', value: index, required: true }
+                        %td= article['title']
+                        %td= article['description']
+                        %td= link_to article['url'], article['url'], target: '_blank', rel: 'noopener'
+                        %input{ type: 'hidden', name: "articles[#{index}][title]", value: article['title'] }
+                        %input{ type: 'hidden', name: "articles[#{index}][description]", value: article['description'] }
+                        %input{ type: 'hidden', name: "articles[#{index}][link]", value: article['url'] }
+    %p
+        Rating:
+        = select_tag :rating, options_for_select(1..5)
     = hidden_field_tag :representative_id, @selected_representative.id
-    - @api_articles.each_with_index do |article, index|
-        .article
-            %label
-                %input{ type: 'radio', name: 'selected_article_index', value: index, required: true }
-                %span.article-title= article['title']
-                %span.article-link= link_to article['url'], article['url'], target: '_blank'
-                %span.article-description= article['description']
-                %input{ type: 'hidden', name: 'news_item[title]', value: article['title'] }
-                %input{ type: 'hidden', name: 'news_item[description]', value: article['description'] }
-                %input{ type: 'hidden', name: 'news_item[link]', value: article['url'] }
+    .form-group.row
+        .col-sm-12.text-center
+            = submit_tag 'Save', class: 'btn btn-primary'
+
                 

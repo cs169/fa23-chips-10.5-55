@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 
   get 'my_news_item/select_rep_issue', to: 'my_news_items#select_rep_issue', as: :select_rep_issue_my_news_item
   post 'my_news_item/display_articles', to: 'my_news_items#display_articles', as: :display_articles_my_news_item
+  post 'my_news_item/create_from_selected', to:  'my_news_items#create_from_selected', as: :create_from_selected_my_news_item
+
 
   get '/search/(:address)' => 'search#search', :as => 'search_representatives'
 end
