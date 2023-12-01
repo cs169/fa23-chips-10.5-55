@@ -1,13 +1,23 @@
 # frozen_string_literal: true
 
 class MyNewsItemsController < SessionController
-  before_action :set_representative
+  before_action :set_representative,only: [:create, :update, :destroy, :new]
   before_action :set_representatives_list
-  before_action :set_news_item, only: %i[edit update destroy]
+  before_action :set_news_item,only: [:edit, :update, :destroy]
+  before_action :find_articles,only: [:display_articles]
 
   def new
     @news_item = NewsItem.new
   end
+
+  def select_rep_issue
+    render :select_rep_issue
+  end
+
+  def display_articles
+
+    render :display_articles
+  end 
 
   def edit; end
 
@@ -59,5 +69,12 @@ class MyNewsItemsController < SessionController
 
   def set_issue
     @issue = params[:new_item][:issue]
+  end
+
+  def find_articles
+    @selected_representative_id = news_item_params[:representative_id]
+    @selected_representative = Representative.find(@selected_representative_id)
+    api_key = Rails.application.credentials.NEWS_API_KEY
+    api_query = @selected_representative.name
   end
 end
