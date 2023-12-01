@@ -2,9 +2,11 @@
 
 %p
     Representative: #{@selected_representative ? @selected_representative.name : 'No rep found'}
-    Issue: #{@selected_issue ? @selected_issue : 'No Issue found'}
 %p
 
+%p
+    Issue: #{@selected_issue || 'No Issue found'}
+%p
 
 = form_tag create_from_selected_my_news_item_path, method: :post do
     .table-responsive-md
