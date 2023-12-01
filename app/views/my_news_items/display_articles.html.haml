@@ -3,7 +3,6 @@
 %p
     Representative: #{@selected_representative ? @selected_representative.name : 'No rep found'}
 %p
-    Issue: #{@selected_issue ? @selected_issue : 'No issue selected'}
 
 = form_tag display_articles_my_news_item_path, method: :post do
     = hidden_field_tag :representative_id, @selected_representative.id
@@ -14,9 +13,7 @@
                 %span.article-title= article['title']
                 %span.article-link= link_to article['url'], article['url'], target: '_blank'
                 %span.article-description= article['description']
-                %span.article-issue= article['issue']
                 %input{ type: 'hidden', name: 'news_item[title]', value: article['title'] }
                 %input{ type: 'hidden', name: 'news_item[description]', value: article['description'] }
                 %input{ type: 'hidden', name: 'news_item[link]', value: article['url'] }
-                %input{ type: 'hidden', name: 'news_item[issue]', value: article['issue'] }
                 
