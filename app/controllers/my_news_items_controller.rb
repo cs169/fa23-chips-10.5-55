@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class MyNewsItemsController < SessionController
-  before_action :set_representative,only: [:create, :update, :destroy, :new]
+  before_action :set_representative, only: %i[create update destroy :new]
   before_action :set_representatives_list
-  before_action :set_news_item,only: [:edit, :update, :destroy]
-  before_action :find_articles,only: [:display_articles]
+  before_action :set_news_item, only: %i[edit update destroy]
+  before_action :find_articles, only: [:display_articles]
 
   def new
     @news_item = NewsItem.new
@@ -15,9 +15,8 @@ class MyNewsItemsController < SessionController
   end
 
   def display_articles
-
     render :display_articles
-  end 
+  end
 
   def edit; end
 
@@ -77,5 +76,16 @@ class MyNewsItemsController < SessionController
     @selected_issue = news_item_params[:issue]
     api_key = Rails.application.credentials.NEWS_API_KEY
     api_query = @selected_representative.name
+    base_url = 'https://newsapi.org/v2'
+    endpoint = '/everything'
+    api_params = {
+      apiKey: api_key,
+      q:      api_query
+    }
+
+    response = RestClient.get("#{base_url}#{endpoint}", params: api_params)
+    Rails.logger.info("API Response: #{response}")
+
+    @api_articles = JSON.parse(response.body)['articles'].first(5)
   end
 end
