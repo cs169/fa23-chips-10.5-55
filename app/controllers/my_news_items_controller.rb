@@ -35,10 +35,9 @@ class MyNewsItemsController < SessionController
     selected_article = params[:articles][selected_article_index]
 
     @news_item = NewsItem.new(
-      title: selected_article['title'],
-      description: selected_article['description'],
-      link: selected_article['link'],
-      # rating: params[:rating],
+      title:             selected_article['title'],
+      description:       selected_article['description'],
+      link:              selected_article['link'],
       representative_id: params[:representative_id]
     )
     if @news_item.save

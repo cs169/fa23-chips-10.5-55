@@ -21,13 +21,13 @@
                             %input{ type: 'radio', name: 'selected_article_index', value: index, required: true }
                         %td= article['title']
                         %td= article['description']
-                        %td= link_to article['url'], article['url'], target: '_blank'
+                        %td= link_to article['url'], article['url'], target: '_blank', rel: 'noopener'
                         %input{ type: 'hidden', name: "articles[#{index}][title]", value: article['title'] }
                         %input{ type: 'hidden', name: "articles[#{index}][description]", value: article['description'] }
                         %input{ type: 'hidden', name: "articles[#{index}][link]", value: article['url'] }
     %p
-        Rating: 
-        = select_tag :rating, options_for_select(1..5)               
+        Rating:
+        = select_tag :rating, options_for_select(1..5)
     = hidden_field_tag :representative_id, @selected_representative.id
     .form-group.row
         .col-sm-12.text-center
