@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class MyNewsItemsController < SessionController
-  before_action :set_representative,only: [:create, :update, :destroy, :new]
+  before_action :set_representative, only: %i[create update destroy :new]
   before_action :set_representatives_list
-  before_action :set_news_item,only: [:edit, :update, :destroy]
-  before_action :find_articles,only: [:display_articles]
+  before_action :set_news_item, only: %i[edit update destroy]
+  before_action :find_articles, only: [:display_articles]
 
   def new
     @news_item = NewsItem.new

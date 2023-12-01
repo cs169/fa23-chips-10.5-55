@@ -1,14 +1,14 @@
 .row.mt-2
-  .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
-    %h1.text-center Edit News Item
-    
-    = form_tag display_articles_my_news_item_path, method: :post do
-      .form-group.row
-        .col-sm-12
-          %label.col-form-label{ for: 'news_item_representative_id' } Representative:
-          = select_tag 'news_item[representative_id]', options_for_select(@representatives_list, params.dig(:news_item, :representative_id)), include_blank: true, class: 'form-control'
+    .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
+        %h1.text-center Edit News Item
+        
+        = form_tag display_articles_my_news_item_path, method: :post do
+            .form-group.row
+                .col-sm-12
+                  %label.col-form-label{ for: 'news_item_representative_id' } Representative:
+                  = select_tag 'news_item[representative_id]', options_for_select(@representatives_list, params.dig(:news_item, :representative_id)), include_blank: true, class: 'form-control'
 
-      .form-group.row
-        .col-sm-12.text-center
-          = hidden_field_tag :authenticity_token, form_authenticity_token
-          = submit_tag 'Search', class: 'btn btn-primary'
+            .form-group.row
+                .col-sm-12.text-center
+                  = hidden_field_tag :authenticity_token, form_authenticity_token
+                  = submit_tag 'Search', class: 'btn btn-primary'
