@@ -33,6 +33,7 @@
                                 %td= item.description
                                 %td
                                     %time.timeago{ datetime: item.created_at.iso8601 }
+                                %td= item.issue
                                 %td
                                     = link_to representative_news_item_path(item.representative.id, item.id),
                                     class: 'btn btn-info' do
