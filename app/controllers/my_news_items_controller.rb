@@ -16,7 +16,7 @@ class MyNewsItemsController < SessionController
 
   def display_articles
     render :display_articles
-  end 
+  end
 
   def edit; end
 
@@ -78,14 +78,13 @@ class MyNewsItemsController < SessionController
     base_url = 'https://newsapi.org/v2'
     endpoint = '/everything'
     api_params = {
-      apiKey: api_key, 
-      q: api_query
+      apiKey: api_key,
+      q:      api_query
     }
 
     response = RestClient.get("#{base_url}#{endpoint}", params: api_params)
     Rails.logger.info("API Response: #{response}")
 
     @api_articles = JSON.parse(response.body)['articles'].first(5)
-
   end
 end
