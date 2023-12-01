@@ -10,7 +10,7 @@ gem 'rails', '5.2.8.1'
 # Use Puma as the app server
 gem 'puma'
 
-gem 'rest-client' 
+gem 'rest-client'
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 # Note: Pin the webpacker version to the same version used in package.json
