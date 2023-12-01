@@ -68,12 +68,13 @@ class MyNewsItemsController < SessionController
   end
 
   def set_selected_issue
-    @selected_issue = params[:new_item][:issue]
+    @selected_issue = news_item_params[:issue]
   end
 
   def find_articles
     @selected_representative_id = news_item_params[:representative_id]
     @selected_representative = Representative.find(@selected_representative_id)
+    @selected_issue = news_item_params[:issue]
     api_key = Rails.application.credentials.NEWS_API_KEY
     api_query = @selected_representative.name
   end
