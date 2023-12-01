@@ -15,7 +15,6 @@ class MyNewsItemsController < SessionController
   end
 
   def display_articles
-
     render :display_articles
   end 
 
@@ -76,5 +75,17 @@ class MyNewsItemsController < SessionController
     @selected_representative = Representative.find(@selected_representative_id)
     api_key = Rails.application.credentials.NEWS_API_KEY
     api_query = @selected_representative.name
+    base_url = 'https://newsapi.org/v2'
+    endpoint = '/everything'
+    api_params = {
+      apiKey: api_key, 
+      q: api_query
+    }
+
+    response = RestClient.get("#{base_url}#{endpoint}", params: api_params)
+    Rails.logger.info("API Response: #{response}")
+
+    @api_articles = JSON.parse(response.body)['articles'].first(5)
+
   end
 end
