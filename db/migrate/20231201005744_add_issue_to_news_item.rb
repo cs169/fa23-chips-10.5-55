@@ -1,5 +1,5 @@
-class AddIssueToNewsItem < ActiveRecord::Migration[5.2]
+class AddIssueToNewsItems < ActiveRecord::Migration[5.2]
   def change
-    add_column :news_item, :issue, :string
+    add_column :news_items, :issue, :string
   end
 end
