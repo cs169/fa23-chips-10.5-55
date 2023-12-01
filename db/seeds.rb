@@ -33,6 +33,7 @@ SeedData.representatives.each do |rep|
             title:          news_item[:title],
             description:    news_item[:description],
             link:           news_item[:link]
+            issue:          news_item[:issue]
         )
     end
 end
