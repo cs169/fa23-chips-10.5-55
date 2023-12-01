@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MyNewsItemsController < SessionController
-  before_action :set_representative, only: %i[create update destroy new]
+  before_action :set_representative, only: %i[create update destroy new create_from_selected]
   before_action :set_representatives_list
   before_action :set_news_item, only: %i[edit update destroy]
   before_action :find_articles, only: [:display_articles]
@@ -22,6 +22,25 @@ class MyNewsItemsController < SessionController
 
   def create
     @news_item = NewsItem.new(news_item_params)
+    if @news_item.save
+      redirect_to representative_news_item_path(@representative, @news_item),
+                  notice: 'News item was successfully created.'
+    else
+      render :new, error: 'An error occurred when creating the news item.'
+    end
+  end
+
+  def create_from_selected
+    selected_article_index = params[:selected_article_index]
+    selected_article = params[:articles][selected_article_index]
+
+    @news_item = NewsItem.new(
+      title: selected_article['title'],
+      description: selected_article['description'],
+      link: selected_article['link'],
+      # rating: params[:rating],
+      representative_id: params[:representative_id]
+    )
     if @news_item.save
       redirect_to representative_news_item_path(@representative, @news_item),
                   notice: 'News item was successfully created.'
