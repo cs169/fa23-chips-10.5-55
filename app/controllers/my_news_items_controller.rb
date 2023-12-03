@@ -80,11 +80,7 @@ class MyNewsItemsController < SessionController
   end
 
   def set_issues_list
-    @issues_list = ['Free Speech', 'Immigration', 'Terrorism', 'Social Security and
-    Medicare', 'Abortion', 'Student Loans', 'Gun Control', 'Unemployment',
-                    'Climate Change', 'Homelessness', 'Racism', 'Tax Reform',
-                    'Net Neutrality', 'Religious Freedom', 'Border Security', 'Minimum Wage',
-                    'Equal Pay']
+    @issues_list = NewsItem.all_issues
   end
 
   def set_news_item
@@ -106,12 +102,14 @@ class MyNewsItemsController < SessionController
   end
 
   def find_articles
+    return unless news_item_params[:representative_id].present? && news_item_params[:issue].present?
+
     set_selected_representative_issue
     if Rails.env.test?
       @api_articles = [
         { 'title' => 'Mock Title', 'description' => 'Mock Description', 'url' => 'http://mockurl.com' }
       ]
-    elsif news_item_params[:representative_id].present? && news_item_params[:issue].present?
+    else
       api_params = {
         apiKey: Rails.application.credentials.NEWS_API_KEY,
         q:      "#{@selected_representative.name} #{@selected_issue}"
