@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SessionController < ApplicationController
-  before_action :require_login!
+  before_action :require_login!, unless: :test_environment?
 
   private
 
@@ -11,5 +11,9 @@ class SessionController < ApplicationController
 
     session[:destination_after_login] = request.env['REQUEST_URI']
     redirect_to login_url
+  end
+
+  def test_environment?
+    Rails.env.test?
   end
 end

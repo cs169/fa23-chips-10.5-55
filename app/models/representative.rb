@@ -7,29 +7,9 @@ class Representative < ApplicationRecord
     reps = []
 
     rep_info.officials.each_with_index do |official, index|
-      ocdid_temp = ''
-      title_temp = ''
-      address_temp = ''
+      title, ocdid = find_title_and_ocdid(rep_info, index)
 
-      rep_info.offices.each do |office|
-        if office.official_indices.include? index
-          title_temp = office.name
-          ocdid_temp = office.division_id
-        end
-      end
-      rep_attributes = {
-        name: official.name,
-        ocdid: ocdid_temp,
-        title: title_temp,
-        "line1": official.address&.first&.line1,
-        # "line2": official.address&.first&.line2,
-        # "line3": official.address&.first&.line3,
-        "city": official.address&.first&.city,
-        "state": official.address&.first&.state,
-        "zip": official.address&.first&.zip,
-        party: official.party,
-        photo_url: official.photo_url,
-      }
+      rep_attributes = create_rep_attributes(official, title, ocdid)
       existing = Representative.find_by({ name: official.name })
       if existing.nil?
         rep = Representative.create!(rep_attributes)
@@ -39,7 +19,34 @@ class Representative < ApplicationRecord
         reps.push(existing)
       end
     end
-
     reps
+  end
+
+  def self.find_title_and_ocdid(rep_info, index)
+    ocdid_temp = ''
+    title_temp = ''
+
+    rep_info.offices.each do |office|
+      if office.official_indices.include? index
+        title_temp = office.name
+        ocdid_temp = office.division_id
+      end
+    end
+    [title_temp, ocdid_temp]
+  end
+
+  def self.create_rep_attributes(official, title, ocdid)
+    address = official.address&.first
+    {
+      name:      official.name,
+      ocdid:     ocdid,
+      title:     title,
+      line1:     address&.line1,
+      city:      address&.city,
+      state:     address&.state,
+      zip:       address&.zip,
+      party:     official.party,
+      photo_url: official.photo_url
+    }
   end
 end
