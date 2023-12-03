@@ -82,9 +82,9 @@ class MyNewsItemsController < SessionController
   def set_issues_list
     @issues_list = ['Free Speech', 'Immigration', 'Terrorism', 'Social Security and
     Medicare', 'Abortion', 'Student Loans', 'Gun Control', 'Unemployment',
-    'Climate Change', 'Homelessness', 'Racism', 'Tax Reform', 
-    'Net Neutrality', 'Religious Freedom', 'Border Security', 'Minimum Wage',
-    'Equal Pay']
+                    'Climate Change', 'Homelessness', 'Racism', 'Tax Reform',
+                    'Net Neutrality', 'Religious Freedom', 'Border Security', 'Minimum Wage',
+                    'Equal Pay']
   end
 
   def set_news_item
@@ -100,24 +100,25 @@ class MyNewsItemsController < SessionController
     @selected_issue = news_item_params[:issue]
   end
 
-  def find_articles
-    @selected_representative_id = news_item_params[:representative_id]
-    @selected_representative = Representative.find(@selected_representative_id)
-    name = @selected_representative.name
+  def set_selected_representative_issue
     @selected_issue = news_item_params[:issue]
-    issue = @selected_issue
-    api_key = Rails.application.credentials.NEWS_API_KEY
-    api_query = "#{name} #{issue}"
-    base_url = 'https://newsapi.org/v2'
-    endpoint = '/everything'
-    api_params = {
-      apiKey: api_key,
-      q:      api_query
-    }
+    @selected_representative = Representative.find(news_item_params[:representative_id])
+  end
 
-    response = RestClient.get("#{base_url}#{endpoint}", params: api_params)
-    Rails.logger.info("Issue: #{issue}")
+  def find_articles
+    set_selected_representative_issue
+    if Rails.env.test?
+      @api_articles = [
+        { 'title' => 'Mock Title', 'description' => 'Mock Description', 'url' => 'http://mockurl.com' }
+      ]
+    elsif news_item_params[:representative_id].present? && news_item_params[:issue].present?
+      api_params = {
+        apiKey: Rails.application.credentials.NEWS_API_KEY,
+        q:      "#{@selected_representative.name} #{@selected_issue}"
+      }
 
-    @api_articles = JSON.parse(response.body)['articles'].first(5)
+      response = RestClient.get('https://newsapi.org/v2/everything', params: api_params)
+      @api_articles = JSON.parse(response.body)['articles'].first(5)
+    end
   end
 end

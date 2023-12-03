@@ -18,6 +18,8 @@ module NavigationHelpers
 
     when /^the "(.*?)" profile page$/
       representative_url(Representative.find_by(name: $1))
+    when /^the select representative and issue page$/
+      'my_news_item/select_rep_issue'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
