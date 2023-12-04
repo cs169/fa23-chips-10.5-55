@@ -25,7 +25,9 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-
+    when /^the "(.*?)" news article page$/
+      'representatives/1/news_items'
+    
     else
       begin
         page_name =~ /^the (.*) page$/
