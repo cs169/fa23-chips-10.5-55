@@ -6,10 +6,27 @@ When('I select a representative {string}') do |representative_name|
   select representative_name, from: 'news_item[representative_id]'
 end
 
+Given('I have added an article and I am on the {string} news article page') do |_representative_name|
+  step 'I am on the select representative and issue page'
+  step 'I select a representative "Joe Biden"'
+  step 'I select a issue "Terrorism"'
+  step 'I press "Search"'
+  step 'I select the first news article'
+  step 'I press "Save"'
+end
+
 When('I select a issue {string}') do |issue_name|
   expect(page).to have_select('news_item[issue]')
 
   select issue_name, from: 'news_item[issue]'
+end
+
+When('I should be on the Select Representative and Issue page') do
+  expect(page).to have_content('Select Representative and Issue')
+end
+
+When('I should be on the Add News Article page') do
+  expect(page).to have_content('Add News Article')
 end
 
 Then('I should see the displayed news articles') do

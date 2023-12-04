@@ -17,4 +17,9 @@ class NewsItem < ApplicationRecord
      'Net Neutrality', 'Religious Freedom', 'Border Security', 'Minimum Wage',
      'Equal Pay']
   end
+
+  def update_average_rating
+    self.average_rating = ratings.average(:rating).round(2)
+    save
+  end
 end
